@@ -13,18 +13,20 @@ public class ListItem : MonoBehaviour
         colorIconButton = GetComponentInChildren<Button>();
         colorIconButton.onClick.AddListener(OpenColorPicker);
         colorPicker.gameObject.SetActive(false);
+        // Set the color of the colorIconButton to the color of the magnet
+        colorIconButton.image.color = magnet.GetComponent<Renderer>().material.color;
     }
 
     void OpenColorPicker()
     {
         // Show the color picker
-        colorPicker.gameObject.SetActive(true);
+        //colorPicker.gameObject.SetActive(true);
 
         // Set the initial color to the current color of the magnet
-        colorPicker.color = magnet.GetComponent<Renderer>().material.color;
+        //colorPicker.color = magnet.GetComponent<Renderer>().material.color;
 
         // Start a coroutine to monitor the color picker
-        StartCoroutine(MonitorColorPicker());
+        //StartCoroutine(MonitorColorPicker());
     }
 
     IEnumerator MonitorColorPicker()
